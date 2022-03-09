@@ -23,7 +23,20 @@ namespace MMAF.Controllers
             return View();
         }
 
+        [Route("Privacy")]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [Route("Museum")]
+        public IActionResult Museum()
+        {
+            return View();
+        }
+
+        [Route("Contact")]
+        public IActionResult Contact()
         {
             return View();
         }

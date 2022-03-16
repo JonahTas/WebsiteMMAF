@@ -36,12 +36,20 @@ namespace MMAF.Controllers
         }
 
         [Route("Contact")]
-        public IActionResult Contact(string firstname, string lastname)
+        public IActionResult Contact()
         {
-            ViewData["Voornaam"] = firstname;
-            ViewData["Achternaam"] = lastname;
-
             return View();
+        }
+   
+        [HttpPost]
+        [Route("Contact")]
+        public IActionResult Contact(Person person) 
+        { 
+
+            ViewData["firstname"] = person.Firstname;
+            ViewData["lastname"] = person.Lastname;
+
+            return View(person);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,14 +1,20 @@
-﻿@{
+﻿@model Person
+@{
     ViewData["Title"] = "Contact";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to contact me...</p>
-<p>Hallo @ViewData["Voornaam"] die achternaam @ViewData["Achternaam"] heeft</p>
 
 
-<form>
+
+<form method ="post">
     Voornaam: <input type="text" name="firstname" />
     Achternaam: <input type="text" name="lastname" />
     <input type="submit" value="Submit" />
 </form>
+
+@if (Model!= null)
+{
+    <p>Hallo @Model.Firstname die achternaam @Model.Lastname heeft</p>
+}

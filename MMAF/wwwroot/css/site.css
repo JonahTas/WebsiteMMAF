@@ -1,5 +1,41 @@
 ﻿body {
-    background-color: #1fb8a1;
+    
+    background-color: #679983;
     color: #ffffff;
     font-family: Tahoma, sans-serif;
+    margin: 0;
 }
+
+.header {
+    max-width: 2000px;
+    margin-top: 50px
+}
+
+/* alle elementen van het type nav*/
+.main-nav {
+    background-color: #507866;
+    display: flex;
+}
+
+    .main-nav a {
+        text-decoration: none;
+        color: white;
+        padding: 15px 25px;
+    }
+
+        .main-nav a:hover {
+            background-color: #ababab;
+        }
+
+.main-footer {
+    background-color: #507866;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+        .main-footer div {text-decoration:none;
+                          color:white;
+                          padding: 15px 25px;
+        }

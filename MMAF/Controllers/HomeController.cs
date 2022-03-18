@@ -40,7 +40,12 @@ namespace MMAF.Controllers
         {
             return View();
         }
-   
+        [Route("Agenda")]
+        public IActionResult Agenda()
+        {
+            return View();
+        }
+
         [HttpPost]
         [Route("Contact")]
         public IActionResult Contact(Person person) 

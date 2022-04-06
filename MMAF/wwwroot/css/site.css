@@ -30,7 +30,6 @@
 .main-footer {
     background-color: #507866;
     display: flex;
-    position: absolute;
     text-align: center;
     bottom: 0;
     width: 100%;

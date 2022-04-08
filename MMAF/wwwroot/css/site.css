@@ -38,3 +38,8 @@
                           color:white;
                           padding: 15px 25px;
         }
+
+            .main-footer div:hover {
+            
+                background-color: #ababab;
+}

@@ -38,14 +38,14 @@ namespace MMAF.Controllers
             return View(names);
         }
 
-        [Route("Privacy")]
-        public IActionResult Privacy()
+        [Route("Locatie")]
+        public IActionResult Locatie()
         {
             return View();
         }
 
-        [Route("Museum")]
-        public IActionResult Museum()
+        [Route("Festivals")]
+        public IActionResult Festivals()
         {
             return View();
         }
@@ -61,6 +61,13 @@ namespace MMAF.Controllers
             return View();
         }
 
+        [Route("FAQ")]
+        public IActionResult FAQ()
+        {
+            return View();
+
+        }
+        
         [HttpPost]
         [Route("Contact")]
         public IActionResult Contact(Person person) 

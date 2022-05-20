@@ -54,7 +54,11 @@ input {
     text-decoration: none;
     color: white;
     padding: 15px 25px;
-
+    margin: 20px;
+    background-color: rgb(96, 168, 185);
+    box-shadow: 1px 1px 5px 0px black;
+    border: 2px solid #acf7ff;
+    border-radius: 3px;
 }
 
             .main-footer div:hover {

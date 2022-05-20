@@ -11,6 +11,14 @@
     margin-top: 50px
 }
 
+.boxed {
+    border: 3px solid #acf7ff;
+    padding: 8px;
+    margin: 20px;
+    background-color: rgb(96, 168, 185);
+    box-shadow: 1px 1px 5px 0px black;
+    border-radius: 3px;
+}
 /* alle elementen van het type nav*/
 .main-nav {
     background-color: #507866;
@@ -21,19 +29,18 @@
         text-decoration: none;
         color: white;
         padding: 15px 25px;
+        margin: 20px;
+        background-color: rgb(96, 168, 185);
+        box-shadow: 1px 1px 5px 0px black;
+        border: 2px solid #acf7ff;
+        border-radius: 3px;
     }
 
         .main-nav a:hover {
             background-color: #ababab;
         }
 
-.main-footer {
-    background-color: #507866;
-    display: flex;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-}
+
         .main-footer div {text-decoration:none;
                           color:white;
                           padding: 15px 25px;

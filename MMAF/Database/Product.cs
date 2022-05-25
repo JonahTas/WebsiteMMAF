@@ -13,7 +13,7 @@ namespace MMAF.Database
 
         public string? Prijs { get; set; }
 
-        public int Beschikbaarheid { get; set; }    
+        public int Beschikbaarheid { get; set; }
 
     }
 }

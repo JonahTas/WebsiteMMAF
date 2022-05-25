@@ -2,11 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MMAF.Models;
 using System;
-using MySql.Data;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using MMAF.Database;
 
 namespace MMAF.Controllers
@@ -21,7 +18,6 @@ namespace MMAF.Controllers
         }
 
 
- 
 
         [Route("Locatie")]
         public IActionResult Locatie()
@@ -62,6 +58,7 @@ namespace MMAF.Controllers
             // de lijst met producten in de html stoppen
             return View(products);
         }
+
 
         public List<Product> GetAllProducts()
         {
@@ -110,8 +107,8 @@ namespace MMAF.Controllers
 
         [HttpPost]
         [Route("Contact")]
-        public IActionResult Contact(Person person) 
-        { 
+        public IActionResult Contact(Person person)
+        {
 
             ViewData["firstname"] = person.Firstname;
             ViewData["lastname"] = person.Lastname;
@@ -124,5 +121,16 @@ namespace MMAF.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("product/{id}")]
+        public IActionResult ProductDetails(int id)
+        {
+            var product = GetProduct(id);
+
+            return View(product);
+        }
+
     }
 }
+
+

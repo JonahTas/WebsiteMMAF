@@ -9,9 +9,9 @@
 
 
 <form method ="post">
-    Voornaam: <input type="text" name="firstname" />
-    Achternaam: <input type="text" name="lastname" />
-    Gebooortedatum: <input type="text" name= "birthdate" />
+    Voornaam: <input type="text" name="firstname" required/>
+    Achternaam: <input type="text" name="lastname" required/>
+    Gebooortedatum: <input type="text" name= "birthdate" required/>
 
     <input type="submit" value="Submit" />
 </form>
@@ -21,6 +21,7 @@
     <p>Hallo @Model.Firstname  @Model.Lastname is een domme achternaam</p>
 }
 
+<div class="boxed">
 <p>Wij zijn het team van Dystopia. Via deze pagina kunt u gemakkelijk contact met ons opnemen en alle vragen stellen die u heeft. Vergeet zeker
     niet om eerst bij de FAQ te kijken voor de veelgestelde vragen om te kijken of we daar al antwoord hebben gegeven op uw vraag!
     <div>
@@ -30,3 +31,4 @@
     Email: festivaldystopia@gmail.com</div>
    
 </p> 
+</div>

@@ -9,8 +9,8 @@
 .header {
     max-width: 2000px;
     margin-top: 50px
-}
 
+}
 input {
     font-size: medium;
     border: 3px solid #acf7ff;
@@ -54,6 +54,7 @@ input {
     text-decoration: none;
     color: white;
     padding: 15px 25px;
+    bottom:0;
     margin: 20px;
     background-color: rgb(96, 168, 185);
     box-shadow: 1px 1px 5px 0px black;

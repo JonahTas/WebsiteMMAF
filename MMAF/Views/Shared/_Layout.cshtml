@@ -6,25 +6,39 @@
 <body>
     <header>
         <nav class="main-nav">
-            
-            <a href="/"><img src="/Home-icon.svg.png"/> </a>
-         
+
+            <a href="/"><img src="/Home-icon.svg.png" /> </a>
+
             <a href="/Agenda">Agenda</a>
             <a href="/Festivals">Festivals</a>
             <a href="/Locatie">Locatie</a>
             <a href="/Contact">Contact</a>
             <a href="/FAQ">FAQ</a>
             <input type="text" placeholder="Search..">
-        </nav>        
+        </nav>
     </header>
+    <ul>
+        @RenderBody()
+    </ul>
 
-    @RenderBody()
+    <style>
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/
+            height: 90px;
+           background-color: #507866;
+        }
+    </style>
 
     <footer>
-         <nav class="main-footer" style="display: flex;">          
-             <div>Facebook</div>
-             <div>Twitter</div>
-             <div>Youtube</div>
-         </footer>
+        <div id="footer">
+        <nav class="main-footer" style="display: flex;">
+            <div>Facebook</div>
+            <div>Twitter</div>
+            <div>Youtube</div>
+            </div>
+    </footer>
 </body>
 </html>

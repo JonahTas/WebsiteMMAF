@@ -108,12 +108,7 @@ namespace MMAF.Controllers
         [HttpPost]
         [Route("Contact")]
         public IActionResult Contact(Person person)
-        {
-
-            ViewData["firstname"] = person.FirstName;
-            ViewData["lastname"] = person.LastName;
-            ViewData["email"] = person.Email;
-            ViewData["description"] = person.Description;
+        {                      
 
             // hebben we alles goed ingevuld? Dan sturen we de gebruiker door naar de succes pagina
             if (ModelState.IsValid)

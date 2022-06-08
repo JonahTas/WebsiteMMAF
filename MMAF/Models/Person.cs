@@ -13,7 +13,7 @@ namespace MMAF.Models
         [Required]
         public string Email { get; set; }
 
-        [Required]
+        
         public string Description { get; set; }
 
     }

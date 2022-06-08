@@ -110,9 +110,22 @@ namespace MMAF.Controllers
         public IActionResult Contact(Person person)
         {
 
-            ViewData["firstname"] = person.Firstname;
-            ViewData["lastname"] = person.Lastname;
+            ViewData["firstname"] = person.FirstName;
+            ViewData["lastname"] = person.LastName;
+            ViewData["email"] = person.Email;
+            ViewData["description"] = person.Description;
 
+            // hebben we alles goed ingevuld? Dan sturen we de gebruiker door naar de succes pagina
+            if (ModelState.IsValid)
+            {
+
+                // alle benodigde gegevens zijn aanwezig, we kunnen opslaan!
+                DatabaseConnector.SavePerson(person);
+
+                return Redirect("/succes");
+            }
+
+            // niet goed? Dan sturen we de gegevens door naar de view zodat we de fouten kunnen tonen
             return View(person);
         }
 
@@ -129,6 +142,7 @@ namespace MMAF.Controllers
 
             return View(product);
         }
+
 
     }
 }

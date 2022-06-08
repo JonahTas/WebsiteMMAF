@@ -46,8 +46,13 @@ namespace MMAF.Controllers
         public IActionResult FAQ()
         {
             return View();
-
         }
+        [Route("Succes")]
+        public IActionResult Succes()
+        {
+            return View();
+        }
+
 
 
         public IActionResult Index()
@@ -117,7 +122,7 @@ namespace MMAF.Controllers
                 // alle benodigde gegevens zijn aanwezig, we kunnen opslaan!
                 DatabaseConnector.SavePerson(person);
 
-                return Redirect("/succes");
+                return Redirect("/Succes");
             }
 
             // niet goed? Dan sturen we de gegevens door naar de view zodat we de fouten kunnen tonen

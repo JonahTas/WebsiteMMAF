@@ -1,4 +1,5 @@
-﻿@model Person
+﻿@using MMAF.Models
+@model Person
 @{
     ViewData["Title"] = "Contact";
 }
@@ -8,18 +9,28 @@
 
 
 
-<form method ="post">
-    Voornaam: <input type="text" name="firstname" required/>
-    Achternaam: <input type="text" name="lastname" required/>
-    Gebooortedatum: <input type="text" name= "birthdate" required/>
+<form method="post" class="contactform">
+  <div class="form-group">
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+    @Html.ValidationMessageFor(m => m.FirstName)
+  </div>
 
-    <input type="submit" value="Submit" />
+  <div class="form-group">
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+    @Html.ValidationMessageFor(m => m.LastName)
+  </div>
+
+  <div class="form-group">
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    @Html.ValidationMessageFor(m => m.Email)
+  </div>
+
+  <input type="submit" value="verstuur" />
 </form>
 
-@if (Model!= null)
-{
-    <p>Hallo @Model.Firstname  @Model.Lastname is een domme achternaam</p>
-}
 
 <div class="boxed">
 <p>Wij zijn het team van Dystopia. Via deze pagina kunt u gemakkelijk contact met ons opnemen en alle vragen stellen die u heeft. Vergeet zeker

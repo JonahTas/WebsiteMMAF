@@ -1,15 +1,18 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MMAF.Models;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+
 
 namespace MMAF.Database
 {
     public static class DatabaseConnector
     {
+        // stel in waar de database gevonden kan worden
+        public static string connectionString = "Server=172.16.160.21;Port=3306;Database=110605;Uid=110605;Pwd=inf2122sql;";
 
         public static List<Dictionary<string, object>> GetRows(string query)
         {
-            // stel in waar de database gevonden kan worden
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=110605;Uid=110605;Pwd=inf2122sql;";
+
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
@@ -24,7 +27,7 @@ namespace MMAF.Database
                 // SQL query die we willen uitvoeren
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                // resultaat van de query lezen
+                // resultaat van de query lezen``
                 using (var reader = cmd.ExecuteReader())
                 {
                     var tableData = reader.GetSchemaTable();
@@ -53,15 +56,16 @@ namespace MMAF.Database
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, bericht) VALUES(?voornaam, ?achternaam, ?email, ?bericht)", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres) VALUES(?naam, ?achternaam, ?emailadres)", conn);
 
                 // Elke parameter moet je handmatig toevoegen aan de query
-                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.FirstName;
+                cmd.Parameters.Add("?naam", MySqlDbType.Text).Value = person.FirstName;
                 cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.LastName;
-                cmd.Parameters.Add("?email", MySqlDbType.Text).Value = person.Email;
-                cmd.Parameters.Add("?bericht", MySqlDbType.Text).Value = person.Description;
+                cmd.Parameters.Add("?emailadres", MySqlDbType.Text).Value = person.Email;
+                
                 cmd.ExecuteNonQuery();
             }
         }
+
     }
 }

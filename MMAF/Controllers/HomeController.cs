@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using MMAF.Database;
 
+
+
+
 namespace MMAF.Controllers
 {
     public class HomeController : Controller
@@ -16,6 +19,8 @@ namespace MMAF.Controllers
         {
             _logger = logger;
         }
+
+
 
 
 
@@ -46,8 +51,13 @@ namespace MMAF.Controllers
         public IActionResult FAQ()
         {
             return View();
-
         }
+        [Route("Succes")]
+        public IActionResult Succes()
+        {
+            return View();
+        }
+
 
 
         public IActionResult Index()
@@ -108,11 +118,19 @@ namespace MMAF.Controllers
         [HttpPost]
         [Route("Contact")]
         public IActionResult Contact(Person person)
-        {
+        {                      
 
-            ViewData["firstname"] = person.Firstname;
-            ViewData["lastname"] = person.Lastname;
+            // hebben we alles goed ingevuld? Dan sturen we de gebruiker door naar de succes pagina
+            if (ModelState.IsValid)
+            {
 
+                // alle benodigde gegevens zijn aanwezig, we kunnen opslaan!
+                DatabaseConnector.SavePerson(person);
+
+                return Redirect("/Succes");
+            }
+
+            // niet goed? Dan sturen we de gegevens door naar de view zodat we de fouten kunnen tonen
             return View(person);
         }
 
@@ -129,6 +147,7 @@ namespace MMAF.Controllers
 
             return View(product);
         }
+
 
     }
 }
